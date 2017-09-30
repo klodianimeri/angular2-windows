@@ -1,0 +1,15 @@
+<div class="windows">
+    <div class="windows-wrapper">
+        <ng-content select="window"></ng-content>
+    </div>
+    <div class="background">
+        <ng-content select="wbackground"></ng-content>
+    </div>
+    <div class="navigation">
+        <div class="nav up" (click)="previousWindow()" [class.disabled]="isFirstWindow"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+        <div class="counter">
+            <span class="index">{{_windowIndex + 1}}</span> / <span> {{WindowsLength}}</span>
+        </div>
+        <div class="nav down" (click)="nextWindow()" [class.disabled]="isLastWindow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+    </div>
+</div>
